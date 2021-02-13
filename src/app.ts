@@ -19,7 +19,6 @@ import * as userController from "./controllers/user";
 import * as apiController from "./controllers/api";
 import * as contactController from "./controllers/contact";
 
-
 // API keys and Passport configuration
 import * as passportConfig from "./config/passport";
 
@@ -33,7 +32,7 @@ mongoose.Promise = bluebird;
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true } ).then(
     () => { /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ },
 ).catch(err => {
-    console.log("MongoDB connection error. Please make sure MongoDB is running. " + err);
+    console.log(`MongoDB connection error. Please make sure MongoDB is running. ${err}`);
     // process.exit();
 });
 
